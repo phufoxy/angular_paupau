@@ -1,0 +1,90 @@
+<div class="wrapper">
+
+  <div class="sidebar" data-color='red' data-image="">
+        <!-- sidebar -->
+      <app-sidebar></app-sidebar>
+        <!-- sidebar -->
+      <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+  </div>
+  <div class="main-panel">
+        <!-- navbar -->
+      <app-navbar></app-navbar>
+        <!-- navbar -->
+    
+          
+<div class="main-content">
+
+    <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+           <app-card></app-card>
+        </div>
+         <!-- row -->
+    <div class="row">
+        
+        <!-- card -->
+        <div class="col-lg-12 col-md-12">
+            <div class="card" >
+                <!-- header-card -->
+                <div class="card-header" data-background-color="orange">
+                    <h4 class="title">Các sự kiện</h4>
+                    <p class="category"></p>
+                </div>
+                 <!-- header-card -->
+                 <!-- card-content -->
+                <div class="card-content table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                            <tr>
+                                <th>ID</th>
+                                <th>Tiêu đề</th>
+                                <th>Miểu tả</th>
+                                <th>Thời gian tạo</th>
+                                <th>Lựa Chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr >
+                                <td>A</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td>A</td>
+                                <td class="td-actions text-right">
+                                        <button (click)="updateEvent(tr)" type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button (click)="deleteEvent(tr)" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                </td>
+                            </tr>   
+                        </tbody>
+                    </table>
+                    <div>
+                         <!-- paging -->
+                        <!-- <div class="btn-group pull-right" style="text-align: center">
+                                    <ul class="pagination" >
+                                      <li [ngClass]="{'disabled': (page == 1)}" (click)="(page == 1) || prevPage()"><a   href="javascript:void(0)">Prev</a></li>
+                                        <li *ngFor="let page1 of  (pagesIndex | slice:pagesIndex.length - 4);"  [ngClass]="{'active': (currentIndex == page)}">
+                                            <a (click)="setPage(page1)" href="javascript:void(0)" >{{page1}}</a>
+                                        </li>
+                                      <li  [ngClass]="{'disabled': (page == max)}"><a   (click)="(page == max) || nextPage()" href="javascript:void(0)" >Next</a></li>
+                                    </ul>
+                        </div> -->
+                                 <!-- paging -->
+                        <!-- <a href="javascript:void(0)" ><p style="text-align: center;color: darkturquoise">Xem nhiều hơn</p></a> -->
+                    </div>
+                </div>
+                <!-- card-content -->
+            </div>
+        </div>
+        <!-- card -->
+    </div>
+    </div>
+</div>
+<!-- footer -->
+<app-footer></app-footer>
+<!-- footer -->
+</div>
+</div>  
