@@ -11,6 +11,8 @@ import {HomeModule} from './home/home.module';
 import {HomeComponent} from './home/home.component';
 import {TrainerModule} from './trainer/trainer.module';
 import {TrainerService} from './core/service/trainer.service'
+import {FlickService} from './core/service/flick.service';
+import { SettingComponent } from './setting/setting.component';
 export const APP_MODULES: any[] = [
   BrowserModule,
   AppRoutingModule,
@@ -21,16 +23,18 @@ export const APP_MODULES: any[] = [
   FormsModule,
   HttpClientModule,
   TrainerModule
+ 
 ];
 export const APP_COMPONENTS: any[] = [
   AppComponent,
   HomeComponent,
   
+  
 ];
 @NgModule({
-  declarations: [...APP_COMPONENTS],
+  declarations: [...APP_COMPONENTS, SettingComponent],
   imports: [...APP_MODULES],
-  providers: [TrainerService],
+  providers: [TrainerService,FlickService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

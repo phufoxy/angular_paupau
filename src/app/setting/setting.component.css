@@ -1,8 +1,6 @@
 
   
-.btn.btn-primary{
-  background-color: #099d6e;
-}
+
   input[type=text],input[type=date], select, textarea {
     width: 80%;
     padding: 12px;

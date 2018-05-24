@@ -19,28 +19,67 @@ export class TrainerService {
   constructor(private _http: Http) {
     this.token=localStorage.getItem("token");
   }
-  // getdata
-  getTrainer(){
-    let headers = new Headers({ 'Authorization': 'Bearer ' +  'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YW5uZ2EiLCJleHAiOjE1Mjc2OTMwOTgsImlhdCI6MTUyNzA4ODI5OH0.gij2xLemOlsn_yQeX4cW0kfLZjFcOpwh_o4qF8fcSvM-yRBxGdixGP13LCSDCOLDiSbiABr178OOmeDg8vJIOA' });
-    let options = new RequestOptions({ headers: headers });
-    // get users from api
-    return this._http.get('http://localhost:8080/api/trainer/all',options).map((response:Response)=>response.json());
-  }
-  
-  // set data
-  setter(trainer:Trainer){
-    this.trainer=trainer;
-  }
-  private extractData(res: Response) {        
-    return res.text() ? res.json() : {}; ;
-  }
-  // get data
-  getter(){
-    return this.trainer;
-  }
-  // Error
-  errorHandler(error:Response){
-    return Observable.throw(error||"SERVER ERROR");
-  }
+ // getdata
+ getTrainer(){
+  let headers = new Headers({ 'Authorization': 'Bearer ' + this.token });
+  let options = new RequestOptions({ headers: headers });
+  // get users from api
+  return this._http.get('http://localhost:8080/api/trainer/all',options).map((response:Response)=>response.json());
+}
+ 
+// getdata
+getCount(){
+  let headers = new Headers({ 'Authorization': 'Bearer ' +  this.token });
+  let options = new RequestOptions({ headers: headers });
+  // get users from api
+  return this._http.get('http://localhost:8080/api/trainer/count',options).map((response:Response)=>response.json());
+}
+// Add data
+createTrainer(trainer:Trainer){
+  let headers = new Headers({ 'Authorization': 'Bearer ' +  this.token });
+  headers.append("Content-Type","application/json");
+  let options = new RequestOptions({ headers: headers });
+  // create
+  return this._http.post('http://localhost:8080/api/trainer/new',JSON.stringify(trainer), options).map(this.extractData).catch(this.errorHandler);
+   
+} 
+
+// update data
+updateTrainer(trainer:Trainer){
+  let headers = new Headers({ 'Authorization': 'Bearer ' +  this.token });
+  headers.append("Content-Type","application/json");
+  let options = new RequestOptions({ headers: headers });
+
+  return this._http.put('http://localhost:8080/api/trainer/update',JSON.stringify(trainer), options).map(this.extractData).catch(this.errorHandler);
+}
+// delete data
+deleteTrainer(id:Number){
+  let headers = new Headers({ 'Authorization': 'Bearer ' +  this.token });
+  let options = new RequestOptions({ headers: headers });
+  // delete trainer
+  return this._http.delete('http://localhost:8080/api/trainer/delete/'+id,options).map(this.extractData).catch(this.errorHandler);
+}
+// getid
+getIdTrainer(id:Number){
+  let headers = new Headers({ 'Authorization': 'Bearer ' +  this.token });
+  let options = new RequestOptions({ headers: headers });
+  // delete trainer
+  return this._http.get('http://localhost:8080/api/trainer/profile/'+id,options).map(this.extractData).catch(this.errorHandler);
+}
+// set data
+setter(trainer:Trainer){
+  this.trainer=trainer;
+}
+private extractData(res: Response) {        
+  return res.text() ? res.json() : {}; ;
+}
+// get data
+getter(){
+  return this.trainer;
+}
+// Error
+errorHandler(error:Response){
+  return Observable.throw(error||"SERVER ERROR");
+}
 
 }

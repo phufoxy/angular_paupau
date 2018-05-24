@@ -11,6 +11,7 @@ declare const $: any;
         { path: 'dashboard', title: 'Tổng Quan',  icon:'content_paste', class: '' },
         { path: 'trainer', title: 'Biểu Mẫu Giáo Viên',  icon:'person', class: '' },
         { path: 'trainer-detail', title: 'Giáo Viên',  icon:'class', class: '' },
+        { path: 'setting', title: 'Cài Đặt',  icon:'perm_data_setting', class: '' },
     ];
 @Component({
   selector: 'app-sidebar',

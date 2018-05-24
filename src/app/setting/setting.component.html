@@ -1,0 +1,52 @@
+<div class="wrapper">
+
+  <div class="sidebar" data-color='red' data-image="">
+      <!-- sidebar -->
+      <app-sidebar></app-sidebar>
+       <!-- sidebar -->
+      <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+  </div>
+  <div class="main-panel">
+      <!-- navbar -->
+      <app-navbar></app-navbar>
+     <!-- navbar -->
+    
+          <!-- main -->
+     <div class="main-content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+              <!-- card -->
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">SlideShow</h4>
+                        
+                    </div>
+                    <div class="card-content">
+                         <!-- card -->
+                
+                    <form (ngSubmit)="processForm()"  ngNativeValidate>
+                      <div class="row">
+                        <div class="col-25">
+                          <label >Link Hình Ảnh</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text"  placeholder="Tiêu đề" name="image" [(ngModel)]="image"  required>
+                        </div>
+                      </div>                    
+                      <div class="row">
+                          <input type="submit" value="Lưu">
+                        </div>
+                    </form>               
+                  <!-- card -->        
+            </div>
+        </div>
+        <!-- card -->
+        
+    </div>
+  
+<!-- footer -->
+<app-footer></app-footer>
+<!-- footer -->
+</div>
+</div>  

@@ -21,7 +21,7 @@
                         <div class="input-field col s10" >
                             
                         <div class="form-group form-black is-empty" style="text-align: center;">
-                            <input  type="text" class="form-control" placeholder="Tên" name="firstName"  style="color:
+                            <input  type="text" class="form-control" placeholder="Tên" name="firstName" [(ngModel)]="filter.firstName"  style="color:
                             #fff;">
                             <span class="material-input"></span>
                         </div>
@@ -31,7 +31,7 @@
                   
                   <div class="content-card">
                    <!-- panel -->   
-                   <div class="panel" *ngFor="let tr of trainer ">
+                   <div class="panel" *ngFor="let tr of trainer | student:filter | slice:(page-1)*limit:page*limit">
                     <!-- edit -->
                     <button  (click)="updateTrainer(tr)" type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs" style=" position: absolute;right: -10px;top: -10px;">
                         <i class="material-icons">edit</i>
