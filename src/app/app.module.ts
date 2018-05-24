@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import {HomeModule} from './home/home.module';
 import {HomeComponent} from './home/home.component';
+import {TrainerModule} from './trainer/trainer.module';
+import {TrainerService} from './core/service/trainer.service'
 export const APP_MODULES: any[] = [
   BrowserModule,
   AppRoutingModule,
@@ -17,7 +19,8 @@ export const APP_MODULES: any[] = [
   RouterModule,
   HttpModule,
   FormsModule,
-  HttpClientModule
+  HttpClientModule,
+  TrainerModule
 ];
 export const APP_COMPONENTS: any[] = [
   AppComponent,
@@ -27,7 +30,7 @@ export const APP_COMPONENTS: any[] = [
 @NgModule({
   declarations: [...APP_COMPONENTS],
   imports: [...APP_MODULES],
-  providers: [],
+  providers: [TrainerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

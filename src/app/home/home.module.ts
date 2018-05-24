@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Routes,RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from './table/table.component';
 import { CardComponent } from './card/card.component';
+
 export const SHARED_MODULE: any[] = [
   CommonModule,
   RouterModule

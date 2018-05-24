@@ -3,9 +3,13 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {TrainerComponent} from './trainer/trainer/trainer.component';
+import {TrainerDetailComponent} from './trainer/trainer-detail/trainer-detail.component';
 
 const routes: Routes =[
     { path: 'dashboard',component: HomeComponent},
+    { path: 'trainer',component: TrainerComponent},
+    { path: 'trainer-detail',component: TrainerDetailComponent},
     { path: '',redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 @NgModule({
