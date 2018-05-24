@@ -1,0 +1,157 @@
+<div class="wrapper">
+
+  <div class="sidebar" data-color='red' data-image="">
+      <!-- sidebar -->
+      <app-sidebar></app-sidebar>
+       <!-- sidebar -->
+      <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-3.jpg)"></div>
+  </div>
+  <div class="main-panel">
+      <!-- navbar -->
+      <app-navbar></app-navbar>
+     <!-- navbar -->
+<div class="main-content">
+<div class="container-fluid">
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+              <!-- card-header -->
+                <div class="card-header" data-background-color="red">
+                    <h4 class="title">Biểu mẫu</h4>
+                    <p class="category">Hoàn thành để được vào dữ liệu</p>
+                </div>
+                <!-- card-header -->
+                <div class="container-content">
+                        <form (ngSubmit)="processForm()" ngNativeValidate>
+                          <!-- row -->
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="fname">Họ Lót</label>
+                            </div>
+                            <div class="col-75">
+                              <input  type="text"  name="lastName" [(ngModel)]="trainer.lastName"  placeholder="Họ Lót." required>
+                            </div>
+                          </div>
+                          <!-- row -->
+                          <!-- row -->
+                          <div class="row">
+                            <div class="col-25">
+                              <label for="lname">Tên</label>
+                            </div>
+                            <div class="col-75">
+                                <input placeholder="Tên" type="text" name="firstName" [(ngModel)]="trainer.firstName" required>
+                            </div>
+                          </div>
+                          <!-- row -->
+                          
+                            <!-- row -->
+                          <div class="row">
+                                    <div class="col-25">
+                                      <label for="subject">Số Điện Thoại</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input placeholder="Phone" type="text" name="phone" [(ngModel)]="trainer.phone" required>
+                                    </div>
+                          </div>
+                          <!-- row -->
+                          <!-- row -->
+                        <div class="row">
+                            <div class="col-25">
+                              <label for="subject">Ngày Sinh</label>
+                            </div>
+                            <div class="col-75">
+                                <input placeholder="Ngày Sinh" type="date" name="birthday" [(ngModel)]="trainer.birthday" required>
+                            </div>
+                        </div>
+                        <!-- row -->
+                        <!-- row -->
+                        <div class="row">
+                                <div class="col-25">
+                                  <label for="subject">Địa Chỉ</label>
+                                </div>
+                                <div class="col-75">
+                                    <input placeholder="Địa Chỉ" type="text"  name="address" [(ngModel)]="trainer.address" required>
+                                </div>
+                        </div>
+                        <!-- row -->
+                        <!-- row -->
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="country">Trạng Thái</label>
+                          </div>
+                          <div class="col-75">
+                            <select id="status" name="status"  [(ngModel)]="trainer.status" required>
+                              <option value="undefined" [selected]=true [disabled]="true">--Chọn trạng thái--</option>
+                              <option >Đang Hoạt Động</option>
+                              <option >Hết Hoạt Động</option>
+                              
+                            </select>
+                          </div>
+                        </div>
+            
+                        <div class="row">
+                              <div class="col-25">
+                                <label for="country">Thành Viên</label>
+                              </div>
+                              <div class="col-75">
+                                <select name="description" [(ngModel)]="trainer.description" required>
+                                  <option value="undefined" [selected]=true [disabled]="true">--Chọn Thành Viên--</option>
+                                  <option value="Giảng Viên">Giảng Viên</option>
+                                </select>
+                              </div>
+                          </div>
+                          <!-- row -->
+                        <!-- row -->
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="subject">Category</label>
+                          </div>
+                          <div class="col-75">
+                            
+                            <select name="idCategory" [(ngModel)]="trainer.idCategory" required >
+                              <option value="undefined" [selected]=true [disabled]=true >Select project</option>
+                              <option value="1">Giảng Viên</option>
+                            </select>
+                          </div>
+                  </div>
+                  <!-- row -->
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="subject">Hình Ảnh</label>
+                    </div>
+                    <div class="col-75">
+                        <div class="dropdown" >
+                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Chọn Hình Ảnh
+                          </button>
+                          <ul class="dropdown-menu" style="overflow:hidden; overflow-y:scroll; height: 200px;">
+                            <li *ngFor="let photo of photos" >
+                              <a (click)="getURL(photo.url)"><img height="50px" width="50px" src="{{photo.url}}" ></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+            </div>
+            <!-- row -->
+                        <!-- row -->
+                          <div class="row">
+                            <input type="submit" value="Lưu">
+                          </div>
+                        <!-- row -->
+                        </form>
+                    </div>
+                    <!-- card-header -->
+                
+            </div>
+        </div>
+        <!-- row -->
+    </div>
+</div>
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>
+       <!-- footer -->
+</div>
+</div>    
